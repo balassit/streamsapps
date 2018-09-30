@@ -5,6 +5,7 @@ import { CoreModule } from '@app/core';
 import { SharedModule } from '@app/shared';
 
 import { HomeModule } from './modules/home/home.module';
+import { PricingModule } from './modules/pricing/pricing.module';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -25,6 +26,7 @@ import { AppRoutingModule } from './app-routing.module';
 
     // features
     HomeModule,
+    PricingModule,
 
     // app
     AppRoutingModule
