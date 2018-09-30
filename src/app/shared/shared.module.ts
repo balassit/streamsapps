@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 import { LayoutModule } from './layout/layout.module';
+import { MaterialModule } from './material/material.module';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -15,6 +16,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
         RouterModule,
 
         LayoutModule,
+        MaterialModule,
 
         NgbModule.forRoot()
     ],
