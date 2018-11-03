@@ -13,7 +13,7 @@
     "pree2e": "node node_modules/protractor/bin/webdriver-manager update --gecko false --standalone false --ignore_ssl",
     "wdm:update:ci": "node node_modules/protractor/bin/webdriver-manager update --gecko false --chrome false --standalone false --ignore_ssl",
     "e2e": "ng e2e",
-    "atdd:ci": "ng e2e --protractor-config atdd/conf/protractor.conf.ci.js --webdriver-update false && node format-atdd.js"
+    "atdd:ci": "ng e2e --protractor-config atdd/conf/protractor.conf.ci.js --webdriver-update false"
   },
   "private": true,
   "dependencies": {
