@@ -1,20 +1,34 @@
 sudo: required
-addons:
-  chrome: stable
-
+os:
+  - linux
+services:
+  - docker
 language: node_js
 node_js:
   - "lts/*"
-
 branches:
   only:
     - master
     - develop
-
-before_script:
+addons:
+  apt:
+    sources:
+    - google-chrome
+    packages:
+    - google-chrome-stable
+before_install:
+  - export CHROME_BIN=/usr/bin/google-chrome
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
   - npm install -g @angular/cli
-
+install:
+  - npm install
 script:
+  - ng test --watch=false --code-coverage --browsers=ChromeHeadless
+  - ng e2e
   - ng build --build-optimizer --aot --prod
-  - ng test  --watch=false --code-coverage --browsers ChromeHeadless
-  - ng e2e --protractor-config atdd/conf/protractor.conf.ci.js --webdriver-update false
+notifications:
+  webhooks:
+    on_success: change
+    on_failure: always
+    on_start: false
