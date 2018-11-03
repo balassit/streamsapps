@@ -16,5 +16,5 @@ before_script:
 
 script:
   - ng build --build-optimizer --aot --prod
-  - ng test --code-coverage --browsers ChromeHeadless
+  - ng test  --watch=false --code-coverage --browsers ChromeHeadless
   - ng e2e --protractor-config atdd/conf/protractor.conf.ci.js --webdriver-update false

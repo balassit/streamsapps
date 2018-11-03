@@ -7,7 +7,7 @@
     "build": "ng build --build-optimizer --aot",
     "build:prod": "ng build --build-optimizer --aot --prod",
     "test": "ng test --watch --code-coverage --browsers Chrome",
-    "test:ci": "ng test --code-coverage --browsers ChromeHeadless",
+    "test:ci": "ng test  --watch=false --code-coverage --browsers ChromeHeadless",
     "deploy": "npx ngh",
     "lint": "ng lint",
     "pree2e": "node node_modules/protractor/bin/webdriver-manager update --gecko false --standalone false --ignore_ssl",
