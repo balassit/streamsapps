@@ -7,7 +7,7 @@ describe('App', () => {
     page = new AppPage();
   });
 
-  it('should display title correctly #COFI401KB-798', () => {
+  it('should display title correctly', () => {
     const expectedTitle: any = 'streamsapps';
     page.navigateTo()
       .then(() => page.getPageTitle())

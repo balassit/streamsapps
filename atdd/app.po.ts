@@ -7,10 +7,6 @@ export class AppPage {
     return browser.get('/');
   }
 
-  getParagraphText() {
-    return element(by.css('app-root app-quote div p')).getText();
-  }
-
   getPageTitle() {
     return browser.getTitle();
   }

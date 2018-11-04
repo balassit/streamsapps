@@ -6,11 +6,6 @@ import { AppConfigService } from './app/core/services/app-config.service';
 import { IAppConfig } from './app/core/models/IAppConfig';
 import { environment } from './environments/environment';
 
-if (environment.production) {
-  enableProdMode();
-}
-
-
 AppConfigService.load('assets/config.json')
   .then((settings: IAppConfig) => {
     if (settings.env === 'prod' || settings.env === 'preprod') {
@@ -18,7 +13,3 @@ AppConfigService.load('assets/config.json')
     }
     return platformBrowserDynamic().bootstrapModule(AppModule);
   }).catch((err: string) => console.log(err));
-
-
-platformBrowserDynamic().bootstrapModule(AppModule)
-  .catch(err => console.log(err));
